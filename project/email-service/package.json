@@ -1,0 +1,41 @@
+{
+  "name": "nodejs-email-service",
+  "version": "1.0.0",
+  "description": "Complete email service with IMAP, POP3, and SMTP support",
+  "main": "EmailService.js",
+  "scripts": {
+    "start": "node examples/basic-usage.js",
+    "test": "node test/test-all.js",
+    "example:basic": "node examples/basic-usage.js",
+    "example:pop3": "node examples/pop3-usage.js",
+    "example:bulk": "node examples/bulk-email.js",
+    "lint": "eslint .",
+    "docs": "jsdoc -c jsdoc.conf.json"
+  },
+  "keywords": [
+    "email",
+    "imap",
+    "pop3",
+    "smtp",
+    "nodemailer",
+    "mailparser",
+    "nodejs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "node-imap": "^0.9.6",
+    "mailparser": "^3.6.5",
+    "nodemailer": "^6.9.7",
+    "poplib": "^0.1.7",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "jsdoc": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

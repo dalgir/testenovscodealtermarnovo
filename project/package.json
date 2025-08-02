@@ -1,0 +1,28 @@
+{
+  "name": "scr-customer-service-system",
+  "version": "1.0.0",
+  "description": "Sistema completo de atendimento ao cliente SCR Eletrônica Industrial",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\" --kill-others-on-fail",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "backend:dev": "npm --prefix ./backend run dev",
+    "install:all": "npm --prefix frontend install && npm --prefix backend install",
+    "build": "npm --prefix frontend run build",
+    "test:email": "npm --prefix backend run test",
+    "preview": "npm --prefix frontend run preview"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "customer-service",
+    "nodejs",
+    "react",
+    "email",
+    "repair-request",
+    "scr-eletronica"
+  ],
+  "author": "SCR Eletrônica Industrial",
+  "license": "MIT"
+}

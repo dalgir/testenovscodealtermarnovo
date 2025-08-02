@@ -1,0 +1,120 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradientes sutis -->
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#e2e8f0;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#cbd5e1;stop-opacity:0.1"/>
+    </linearGradient>
+    
+    <linearGradient id="componentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:0.05"/>
+      <stop offset="50%" style="stop-color:#0891b2;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.05"/>
+    </linearGradient>
+
+    <!-- Padrão de circuito -->
+    <pattern id="circuitPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="none"/>
+      <!-- Linhas de circuito -->
+      <path d="M0,40 L20,40 L20,20 L60,20 L60,60 L80,60" stroke="#e2e8f0" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M40,0 L40,20 L60,20 L60,40 L80,40" stroke="#cbd5e1" stroke-width="1" fill="none" opacity="0.2"/>
+      <!-- Pontos de conexão -->
+      <circle cx="20" cy="40" r="2" fill="#94a3b8" opacity="0.4"/>
+      <circle cx="60" cy="20" r="2" fill="#94a3b8" opacity="0.4"/>
+      <circle cx="60" cy="60" r="2" fill="#94a3b8" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Fundo base -->
+  <rect width="1200" height="300" fill="url(#circuitGradient)"/>
+  
+  <!-- Padrão de circuito sutil -->
+  <rect width="1200" height="300" fill="url(#circuitPattern)" opacity="0.6"/>
+
+  <!-- Componentes eletrônicos estilizados -->
+  <!-- Resistores -->
+  <g opacity="0.15">
+    <rect x="150" y="120" width="30" height="8" rx="4" fill="#64748b"/>
+    <rect x="145" y="118" width="5" height="12" fill="#64748b"/>
+    <rect x="180" y="118" width="5" height="12" fill="#64748b"/>
+    
+    <rect x="350" y="180" width="30" height="8" rx="4" fill="#64748b"/>
+    <rect x="345" y="178" width="5" height="12" fill="#64748b"/>
+    <rect x="380" y="178" width="5" height="12" fill="#64748b"/>
+    
+    <rect x="750" y="100" width="30" height="8" rx="4" fill="#64748b"/>
+    <rect x="745" y="98" width="5" height="12" fill="#64748b"/>
+    <rect x="780" y="98" width="5" height="12" fill="#64748b"/>
+  </g>
+
+  <!-- Capacitores -->
+  <g opacity="0.12">
+    <rect x="250" y="200" width="4" height="20" fill="#475569"/>
+    <rect x="260" y="200" width="4" height="20" fill="#475569"/>
+    <path d="M254,195 L254,225 M260,195 L260,225" stroke="#475569" stroke-width="1"/>
+    
+    <rect x="550" y="80" width="4" height="20" fill="#475569"/>
+    <rect x="560" y="80" width="4" height="20" fill="#475569"/>
+    <path d="M554,75 L554,105 M560,75 L560,105" stroke="#475569" stroke-width="1"/>
+  </g>
+
+  <!-- Chips/ICs -->
+  <g opacity="0.1">
+    <rect x="450" y="140" width="40" height="20" rx="2" fill="#374151"/>
+    <rect x="445" y="145" width="5" height="2" fill="#374151"/>
+    <rect x="445" y="150" width="5" height="2" fill="#374151"/>
+    <rect x="445" y="155" width="5" height="2" fill="#374151"/>
+    <rect x="490" y="145" width="5" height="2" fill="#374151"/>
+    <rect x="490" y="150" width="5" height="2" fill="#374151"/>
+    <rect x="490" y="155" width="5" height="2" fill="#374151"/>
+    
+    <rect x="850" y="160" width="40" height="20" rx="2" fill="#374151"/>
+    <rect x="845" y="165" width="5" height="2" fill="#374151"/>
+    <rect x="845" y="170" width="5" height="2" fill="#374151"/>
+    <rect x="845" y="175" width="5" height="2" fill="#374151"/>
+    <rect x="890" y="165" width="5" height="2" fill="#374151"/>
+    <rect x="890" y="170" width="5" height="2" fill="#374151"/>
+    <rect x="890" y="175" width="5" height="2" fill="#374151"/>
+  </g>
+
+  <!-- Linhas de conexão principais -->
+  <g opacity="0.08">
+    <path d="M0,150 Q300,120 600,150 T1200,140" stroke="url(#componentGradient)" stroke-width="2" fill="none"/>
+    <path d="M0,180 Q400,160 800,180 T1200,170" stroke="url(#componentGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M0,120 Q200,100 400,120 Q600,140 800,120 Q1000,100 1200,110" stroke="url(#componentGradient)" stroke-width="1" fill="none"/>
+  </g>
+
+  <!-- Pontos de energia/fluxo -->
+  <g opacity="0.2">
+    <circle cx="100" cy="150" r="3" fill="#0891b2">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="130" r="2" fill="#1e3a8a">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="170" r="2.5" fill="#0891b2">
+      <animate attributeName="opacity" values="0.15;0.5;0.15" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="140" r="2" fill="#1e3a8a">
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Elementos geométricos industriais -->
+  <g opacity="0.06">
+    <!-- Hexágonos -->
+    <polygon points="80,50 95,58 95,74 80,82 65,74 65,58" fill="#64748b"/>
+    <polygon points="320,240 335,248 335,264 320,272 305,264 305,248" fill="#64748b"/>
+    <polygon points="680,40 695,48 695,64 680,72 665,64 665,48" fill="#64748b"/>
+    <polygon points="920,220 935,228 935,244 920,252 905,244 905,228" fill="#64748b"/>
+    
+    <!-- Retângulos industriais -->
+    <rect x="200" y="60" width="60" height="8" rx="4" fill="#475569"/>
+    <rect x="500" y="250" width="80" height="6" rx="3" fill="#475569"/>
+    <rect x="800" y="50" width="70" height="7" rx="3.5" fill="#475569"/>
+  </g>
+
+  <!-- Overlay final para suavizar -->
+  <rect width="1200" height="300" fill="url(#circuitGradient)" opacity="0.3"/>
+</svg>
