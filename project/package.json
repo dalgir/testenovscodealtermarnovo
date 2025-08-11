@@ -13,6 +13,8 @@
     "preview": "npm --prefix frontend run preview"
   },
   "devDependencies": {
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
     "concurrently": "^8.2.2"
   },
   "keywords": [

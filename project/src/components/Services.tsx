@@ -15,28 +15,13 @@ const Services = () => {
     }
   ];
 
-  // Updated company logos with the new uploaded images
+  // Logos com caminhos e nomes padronizados
   const companyLogos = [
-    {
-      name: "Rockwell Automation",
-      logo: "/Rockwell_Automation (1).webp"
-    },
-    {
-      name: "Schneider Electric",
-      logo: "/schneider (1).webp"
-    },
-    {
-      name: "SEW Eurodrive",
-      logo: "/SEW.webp"
-    },
-    {
-      name: "Siemens",
-      logo: "/Siemens.webp"
-    },
-    {
-      name: "Bosch",
-      logo: "/bosch.webp"
-    }
+    { name: "Rockwell Automation", logo: "/logos/rockwell_automation.webp" },
+    { name: "Schneider Electric", logo: "/logos/schneider.webp" },
+    { name: "SEW Eurodrive", logo: "/logos/sew.webp" },
+    { name: "Siemens", logo: "/logos/siemens.webp" },
+    { name: "Bosch", logo: "/logos/bosch.webp" }
   ];
 
   return (
@@ -54,11 +39,9 @@ const Services = () => {
               <div className="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <service.icon className="h-8 w-8 text-white" />
               </div>
-              
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              
               <p className="text-gray-600">
                 {service.description}
               </p>
@@ -82,12 +65,15 @@ const Services = () => {
             <div className="flex animate-scroll space-x-12 items-center">
               {/* Primeira sequência */}
               {companyLogos.map((company, index) => (
-                <div key={index} className="flex-shrink-0 w-52 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 p-6">
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-52 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 p-6"
+                >
                   <img
                     src={company.logo}
                     alt={`${company.name} - Parceiro em equipamentos eletrônicos industriais`}
                     className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
-                    style={{ 
+                    style={{
                       width: 'auto',
                       height: 'auto',
                       maxWidth: '100%',
@@ -97,21 +83,22 @@ const Services = () => {
                     loading="lazy"
                     onError={(e) => {
                       console.log(`Erro ao carregar logo: ${company.name}`);
-                      // Fallback para uma imagem placeholder ou esconder
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
+                      e.currentTarget.style.display = 'none';
                     }}
                   />
                 </div>
               ))}
               {/* Segunda sequência para loop contínuo */}
               {companyLogos.map((company, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 w-52 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 p-6">
+                <div
+                  key={`duplicate-${index}`}
+                  className="flex-shrink-0 w-52 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 p-6"
+                >
                   <img
                     src={company.logo}
                     alt={`${company.name} - Parceiro em equipamentos eletrônicos industriais`}
                     className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
-                    style={{ 
+                    style={{
                       width: 'auto',
                       height: 'auto',
                       maxWidth: '100%',
@@ -121,8 +108,7 @@ const Services = () => {
                     loading="lazy"
                     onError={(e) => {
                       console.log(`Erro ao carregar logo: ${company.name}`);
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
+                      e.currentTarget.style.display = 'none';
                     }}
                   />
                 </div>
@@ -134,18 +120,12 @@ const Services = () => {
 
       <style jsx>{`
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-        
         .animate-scroll {
           animation: scroll 25s linear infinite;
         }
-        
         .animate-scroll:hover {
           animation-play-state: paused;
         }
